@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #9ac5ff, #8bf3b3);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #252525;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  z-index: 1000;
+  transition: background-color 0.5s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.custom-navbar {
+  background-color: #f8fcff; /* Cor azul personalizada para o navbar */
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 1.5em;
+  font-family: Helvetica, Calibri, Arial, sans-serif;
+  color: #5e5e5e;
+  transition: background-color 0.5s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo {
+  height: 50px; /* Ajuste a altura da logo conforme necessário */
+  transition: height 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-footer {
+  font-size: large;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fcf9f9; /* Cor azul personalizada para o rodapé */
+  color: #686868;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  transform: translateY(100%); /* Move o footer para baixo fora da tela */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.custom-footer.visible {
+  display: block; /* Mostra o footer */
+  opacity: 1; /* Torna o footer opaco */
+  transform: translateY(0); /* Move o footer para sua posição original */
 }
 
-@keyframes App-logo-spin {
+.animated-navbar {
+  animation: slideDown 0.5s ease-out forwards;
+}
+.custom-navbar .nav-link {
+  color: #6b6b6b; /* Cor do texto dos links do navbar */
+}
+
+@keyframes slideDown {
   from {
-    transform: rotate(0deg);
+      transform: translateY(-100%);
   }
   to {
-    transform: rotate(360deg);
+      transform: translateY(0);
   }
+}
+
+.carousel-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: relative; /* Necessário para o posicionamento do título */
+  padding: 20px;
+}
+
+.carousel-section .section-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #004080; /* Cor do título */
+}
+
+
+
+.slider {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  width: 1680px!important;
+  height: 900px!important
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+footer.visible {
+  display: block;
+  opacity: 1;
+}
+
+.card {
+  margin-bottom: 30px;
 }
