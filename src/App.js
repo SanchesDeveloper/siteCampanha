@@ -1,8 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import emailjs from '@emailjs/browser';
 
 function App() {
+  const [nome, setNome] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
   useEffect(() => {
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
@@ -19,7 +25,7 @@ function App() {
       showSlide(slideIndex);
     };
 
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    const slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
     showSlide(slideIndex);
 
     // Fade-in effect on scroll
@@ -28,7 +34,7 @@ function App() {
       threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.style.opacity = 1;
@@ -55,28 +61,59 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {
+      clearInterval(slideInterval);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
+  function sendEmail(e){
+    e.preventDefault();
+    if(nome === '' || email === '' || telefone === '' || message === ''){
+      alert('Preencha todos os campos')
+      return;
+    }
+    emailjs.send("service_yn9lqop", "template_knm7wdo", templateParams, "kgjrpeuKtmGTMJcGi")
+    .then((response) => {
+      alert("Informações enviadas")
+      console.log("Informações enviadas", response.status, response.text)
+      setNome('')
+      setTelefone('')
+      setEmail('')
+      setMessage('')
+    }, (err) => {
+      console.log("ERRO: ", err)
+    })
+  };
+
+  const templateParams = {
+    from_name: nome,
+    message: message,
+    telefone: telefone,
+    email: email
+  }
+
 
   return (
     <div>
       <header className="custom-navbar text-white p-3 fixed-top animated-navbar">
         <nav className="container d-flex justify-content-center">
           <img src="/img/logo.png" alt="Logo" className="logo" />
-            <ul className="nav">
-              <li className="nav-item">
-                <a className="nav-link" href="#slide">INICIO</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#about">SOBRE</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#faq">FALE CONOSCO</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#social">REDES SOCIAIS</a>
-              </li>
-            </ul>
+          <ul className="nav">
+            <li className="nav-item">
+              <a className="nav-link" href="#slide">INÍCIO</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#about">SOBRE</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#faq">FALE CONOSCO</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#social">REDES SOCIAIS</a>
+            </li>
+          </ul>
         </nav>
       </header>
 
@@ -106,14 +143,42 @@ function App() {
         </section>
 
         {/* Seção FAQ */}
-        <section id="faq" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
-          <h2>Perguntas Frequentes</h2>
-          <form>
-            <div className="form-group">
-              <label htmlFor="question">Envie sua dúvida:</label>
-              <textarea id="question" name="question" className="form-control" rows="4"></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">Enviar</button>
+        <section id="form" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
+          <h2>Como podemos te ajudar?</h2>
+          <form className="form" onSubmit={sendEmail}>
+            <input
+              className="input"
+              type="text"
+              placeholder="Digite seu nome"
+              onChange={(e) => setNome(e.target.value)}
+              value={nome}
+            />
+
+            <input
+              className="input"
+              type="text"
+              placeholder="Digite seu telefone"
+              onChange={(e) => setTelefone(e.target.value)}
+              value={telefone}
+            />
+
+            <input
+              className="input"
+              type="text"
+              placeholder="Digite seu email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+
+            <input
+              className="input"
+              type="text"
+              placeholder="Fale conosco"
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
+            />
+
+            <input className="button" type="submit" value="Enviar" />
           </form>
         </section>
 
