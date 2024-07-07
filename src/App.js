@@ -62,6 +62,7 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
 
+
     return () => {
       clearInterval(slideInterval);
       window.removeEventListener('scroll', handleScroll);
@@ -99,16 +100,15 @@ function App() {
     <div>
       <header className="custom-navbar text-white p-3 fixed-top animated-navbar">
         <nav className="container d-flex justify-content-center">
-          <img src="/img/logo.png" alt="Logo" className="logo" />
           <ul className="nav">
             <li className="nav-item">
-              <a className="nav-link" href="#slide">INÍCIO</a>
+            <a href='#banner'><img src="/img/logo.png" alt="Logo" className="logo"/></a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#about">SOBRE</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#faq">FALE CONOSCO</a>
+              <a className="nav-link" href="#form">FALE CONOSCO</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#social">REDES SOCIAIS</a>
@@ -119,69 +119,66 @@ function App() {
 
       <main className="pt-5">
         {/* Seção de Slides */}
-        <section id="slide" className="carousel-section d-flex align-items-center justify-content-center">
+        <div id="banner" className="banner">
           <div className="slider">
             <div className="slides">
               <div className="slide"><img src="/img/img1.jpg" alt="Imagem 1" className="img-fluid" /></div>
-              <div className="slide"><img src="/img/img2.jpg" alt="Imagem 2" className="img-fluid" /></div>
-              <div className="slide"><img src="/img/img3.jpg" alt="Imagem 3" className="img-fluid" /></div>
             </div>
           </div>
-        </section>
+        </div>
 
         {/* Seção Sobre o Projeto */}
         <section id="about" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
-          <h2 id="titulo">Sobre o Projeto</h2>
-          <p>A campanha política do partido Podemos em Catanduvas, Santa Catarina, está ganhando força e mobilizando a comunidade local
-            com propostas inovadoras e centradas no bem-estar social. Liderada por candidatos comprometidos com a transparência e a participação popular,
-            a campanha destaca a importância de investimentos em educação, saúde e infraestrutura. Uma das principais bandeiras é a melhoria do sistema
-            de saúde municipal, garantindo atendimento de qualidade para todos os cidadãos. Além disso, o partido promete revitalizar a economia local,
-            incentivando o empreendedorismo e criando oportunidades de emprego. O Podemos também está focado em promover a sustentabilidade,
-            com projetos voltados para a preservação do meio ambiente. A segurança pública é outra prioridade, com propostas para fortalecer a atuação das
-             forças de segurança. A campanha busca envolver a população em um diálogo aberto, promovendo audiências públicas e encontros comunitários.
-              O objetivo é construir um futuro melhor para Catanduvas, onde todos possam prosperar e viver com dignidade.</p>
+          <div id="historiaimg"><img className="historiaimg" alt='img' src="/img/historia2.png"/></div>
+            <div className="divHistoria">
+              <p className='paragrafoHistoria'>No inicio de 2024, numa roda de amigos conversávamos sobre os rumos  e desafios de nosso município.
+                A preocupação nossa era sobre o futuro de nossas crianças e adolescentes, bem como o futuro econômico e as oportunidades que Catanduvas poderia estar perdendo.
+                Com isso passamos a reunir um grupo maior de pessoas que pensavam e compartilhavam das mesmas ideias. O que fazer para que nossa cidade fosse mais desenvolvida e apresentasse novas oportunidades sobre tudo aos mais jovens.
+                A visão empreendedora do grupo , fazia com que os debates ficassem mais fortes, e o entendimento dessas pessoas era de que esta transformação somente seria possível se passasse pela gestão publica.
+                Obviamente não teríamos outra alternativa senão nos envolvermos e participarmos do momento politico que se avizinhava, buscando formar um grupo que tivesse vez e voz no processo politico municipal e assim poder expor suas ideais e pensamentos.
+                O surgimento do grupo fez com que fossemos em busca de uma sigla partidária, uma vez, que não é possível almejar qualquer transformação politica sem envolvimento e sem a utilização  de um instrumento neste caso um partido político.
+                Assim buscamos uma sigla que representasse nossos desejos, nossos anseios e principalmente que nossas ideais fossem aceitas. Foi ai que nasceu o PODEMOS.
+                Apesar de ser um partido pouco conhecido ele é resultado da fusão de outros partidos, mas que aqui em Catanduvas, nasceu forte, alicerçado em princípios e principalmente formado por pessoas que desejam  transformar os rumos políticos e administrativos de nossa cidade,  não esquecendo do momento em que vivemos, mas olhando para o futuro e projetando Catanduvas para os próximos 20 ou 30 anos.
+                Juntos, construiremos um futuro promissor para Catanduvas! Com o PODEMOS, a mudança é agora! Catanduvas: um novo capítulo rumo ao progresso e à esperança!
+              </p>
+            </div>
         </section>
 
         {/* Seção FAQ */}
-        <section id="form" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
-          <h2>Como podemos te ajudar?</h2>
-          <form className="form" onSubmit={sendEmail}>
-            <input
-              className="input"
-              type="text"
-              placeholder="Digite seu nome"
-              onChange={(e) => setNome(e.target.value)}
-              value={nome}
-            />
-
-            <input
-              className="input"
-              type="text"
-              placeholder="Digite seu telefone"
-              onChange={(e) => setTelefone(e.target.value)}
-              value={telefone}
-            />
-
-            <input
-              className="input"
-              type="text"
-              placeholder="Digite seu email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-
-            <input
-              className="input"
-              type="text"
-              placeholder="Fale conosco"
-              onChange={(e) => setMessage(e.target.value)}
-              value={message}
-            />
-
-            <input className="button" type="submit" value="Enviar" />
-          </form>
+          <section id="form" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
+            <h2>Como podemos te ajudar?</h2>
+              <form className="form" onSubmit={sendEmail}>
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Digite seu nome"
+                  onChange={(e) => setNome(e.target.value)}
+                  value={nome}
+                />
+                <input
+                  className="input"
+                  type="tel"
+                  placeholder="Digite seu telefone"
+                  onChange={(e) => setTelefone(e.target.value)}
+                  value={telefone}
+                />
+                <input
+                  className="input"
+                  type="email"
+                  placeholder="Digite seu email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+                <textarea
+                  className="input"
+                  placeholder="Fale conosco"
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                  rows="5" // Definindo o número de linhas do campo de mensagem
+                />
+                <input className="button" type="submit" value="Enviar" />
+              </form>
         </section>
-
         {/* Seção Redes Sociais */}
         <section id="social" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
           <h2>Redes Sociais</h2>
