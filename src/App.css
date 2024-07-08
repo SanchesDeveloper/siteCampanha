@@ -1,124 +1,164 @@
+/* Estilo base para o body */
 body {
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, #9ac5ff, #8bf3b3);
   background-size: cover;
   background-attachment: fixed;
-  color: #252525;
+  color: #5f5f5f;
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+/* Estilo para a barra de navegação */
+.navbar {
+  text-align: center;
+  color: #f8f9fa;
+  background-color: #023d7c;
+}
+
+.nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: #f8f9fa;
+}
+
+.nav-link,
+.navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-toggler {
+  border-color: #fff;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Estilo para o cabeçalho (header) */
 header {
+  background-color: #414141;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 1000;
   transition: background-color 0.5s ease-in-out;
 }
 
-.custom-navbar {
-  background-color: #f8fcff; /* Cor azul personalizada para o navbar */
-  font-size: 18px;
-  font-weight: 100;
-  line-height: 1.5em;
-  font-family: Helvetica, Calibri, Arial, sans-serif;
-  color: #5e5e5e;
-  transition: background-color 0.5s ease-in-out;
-}
-
-.logo {
-  height: 50px; /* Ajuste a altura da logo conforme necessário */
-  transition: height 0.3s;
-}
-
-.custom-footer {
-  font-size: large;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #3a3a3a; /* Cor azul personalizada para o rodapé */
-  color: #fdfdfd;
-  position: fixed;
-  bottom: 0;
+/* Estilo para o banner */
+.banner {
   width: 100%;
-  display: none;
-  opacity: 0;
-  transform: translateY(100%); /* Move o footer para baixo fora da tela */
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-.custom-footer.visible {
-  display: block; /* Mostra o footer */
-  opacity: 1; /* Torna o footer opaco */
-  transform: translateY(0); /* Move o footer para sua posição original */
-}
-
-.animated-navbar {
-  animation: slideDown 0.5s ease-out forwards;
-}
-.custom-navbar .nav-link {
-  color: #6b6b6b; /* Cor do texto dos links do navbar */
-}
-
-@keyframes slideDown {
-  from {
-      transform: translateY(-100%);
-  }
-  to {
-      transform: translateY(0);
-  }
-}
-
-.carousel-section {
-  min-height: 100vh;
-  min-width: 175vh;
+  height: calc(100vh - 56px); /* Altura da tela menos a altura do navbar */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  position: relative; /* Necessário para o posicionamento do título */
+  background-color: #0097FE;
   padding: 20px;
 }
 
-.carousel-section .section-title {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #004080; /* Cor do título */
+@media (max-width: 780px) {
+  .banner {
+    height: calc(100vh - 56px); /* Ajusta a altura do banner em telas menores */
+  }
 }
 
-.banner {
-  height: 140vh;
-  position: relative;
-  min-width: 100vh;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+/* Estilo para o slider e suas imagens */
+.slider .slides .slide {
   display: none;
+}
+
+.slider .slides .slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Estilo responsivo para imagens dentro do slider em telas menores */
+@media screen and (max-width: 780px) {
+  .slider .slides .slide img {
+    max-height: 500px;
+    width: 100%;
+  }
+
+  /* Ajustes para o body em telas menores */
+  body {
+    color: #252525; /* Cor de texto alterada */
+  }
+
+  /* Ajustes para o cabeçalho (header) em telas menores */
+  header {
+    background-color: #ffffff; /* Cor de fundo do cabeçalho alterada */
+    z-index: 1000; /* Z-index duplicado removido */
+  }
+}
+
+/* Animação de slide para baixo */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para a seção de carousel com transição de opacidade */
+.carousel-section {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-footer.visible {
-  display: block;
-  opacity: 1;
+/* Estilo para o rodapé */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #076dd4;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }
 
-.card {
-  margin-bottom: 30px;
+/* Classe de visibilidade para o rodapé */
+.footer.visible {
+  display: block;
+}
+
+/* Estilo para o formulário */
+.form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.input,
+.button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+/* Estilo para botões */
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px; /* Adicionado border-radius para botões */
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos específicos para a seção de história (exemplo) */
+#historiaimg {
+  text-align: center;
 }
 
 .historiaimg {
-  max-width: 300px;
-}
-
-#historiaimg {
-  position: absolute;
-  top: 50px;
-  left: 100px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .paragrafoHistoria {
@@ -130,158 +170,4 @@ footer.visible {
   font-family: 'Arial', sans-serif;
   color: #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
-
-.divHistoria {
-  position: absolute;
-  top: 400px;
-  left: 10px;
-  right: 10px;
-}
-
-/* Estilize o cabeçalho da seção */
-#form h2 {
-  color: #000000; /* Cor de texto azul */
-  margin-bottom: 20px; /* Espaçamento inferior */
-  font-size: 2rem; /* Tamanho da fonte */
-  font-weight: bold; /* Negrito */
-}
-
-/* Estilize o formulário */
-#form .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Estilize os inputs do formulário */
-#form .input {
-  width: 200%; /* Largura total */
-  max-width: 500px; /* Largura máxima */
-  margin-bottom: 15px; /* Espaçamento inferior */
-  padding: 10px; /* Espaçamento interno */
-  border: 1px solid #ced4da; /* Borda cinza */
-  border-radius: 5px; /* Borda arredondada */
-  font-size: 1rem; /* Tamanho da fonte */
-  background-color: #f8f9fa; /* Cor de fundo */
-}
-
-/* Estilize o botão de envio */
-#form .button {
-  background-color: #007bff; /* Cor de fundo azul */
-  color: white; /* Cor do texto branco */
-  padding: 10px 20px; /* Espaçamento interno */
-  border: none; /* Sem borda */
-  border-radius: 5px; /* Borda arredondada */
-  font-size: 1rem; /* Tamanho da fonte */
-  cursor: pointer; /* Cursor de ponteiro */
-  transition: background-color 0.3s; /* Transição de cor de fundo */
-}
-
-/* Alteração de cor ao passar o mouse */
-#form .button:hover {
-  background-color: #0056b3; /* Cor de fundo azul escuro */
-}
-
-/* Estilos gerais de responsividade */
-@media screen and (max-width: 1020px) {
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Navbar */
-.custom-navbar {
-  background-color: #333;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* Garante que a navbar esteja acima de outros conteúdos */
-}
-
-.navbar-logo {
-  height: 50px; /* Ajuste a altura conforme necessário */
-}
-
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.navbar li {
-  float: left;
-}
-
-.navbar li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Oculta a navbar em dispositivos móveis */
-@media (max-width: 768px) {
-  .navbar ul {
-    display: none;
-  }
-  
-  .navbar ul.navbar-mobile {
-    display: block;
-  }
-  
-  .navbar ul.navbar-mobile li {
-    text-align: center;
-    width: 100%;
-    display: inline-block;
-  }
-  
-  .navbar ul.navbar-mobile li a {
-    padding: 15px 20px;
-  }
-}
-
-/* Slides */
-.banner {
-  padding: 20px;
-}
-
-/* Seções */
-.carousel-section {
-  padding: 20px;
-}
-
-/* Redes Sociais */
-#social {
-  padding: 20px;
-}
-
-/* Footer */
-.custom-footer {
-  padding: 10px;
-}
-
-/* Imagens */
-.historiaimg {
-  width: 100%;
-  height: auto;
-}
-
-/* Formulário */
-.form {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* Botão Enviar */
-.button {
-  width: 100%;
-  max-width: 200px;
-}
 }

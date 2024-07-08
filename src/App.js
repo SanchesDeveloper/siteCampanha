@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import './App.css';
 import emailjs from '@emailjs/browser';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function App() {
   const [nome, setNome] = useState('');
@@ -62,7 +64,6 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
 
-
     return () => {
       clearInterval(slideInterval);
       window.removeEventListener('scroll', handleScroll);
@@ -95,26 +96,24 @@ function App() {
     email: email
   }
 
-
   return (
     <div>
-      <header className="custom-navbar text-white p-3 fixed-top animated-navbar">
-        <nav className="container d-flex justify-content-center">
-          <ul className="nav">
-            <li className="nav-item">
-            <a href='#banner'><img src="/img/logo.png" alt="Logo" className="logo"/></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#about">SOBRE</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#form">FALE CONOSCO</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#social">REDES SOCIAIS</a>
-            </li>
-          </ul>
-        </nav>
+      <header>
+        <Navbar collapseOnSelect expand="lg" fixed="top" className='navbar'>
+          <Container>
+            <Navbar.Brand href="#banner">
+              <img src="/img/logo.png" alt="Logo" className="logo" />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="ml-auto">
+                <Nav.Link href="#about">SOBRE</Nav.Link>
+                <Nav.Link href="#form">FALE CONOSCO</Nav.Link>
+                <Nav.Link href="#social">REDES SOCIAIS</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
       </header>
 
       <main className="pt-5">
@@ -131,7 +130,8 @@ function App() {
         <section id="about" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
           <div id="historiaimg"><img className="historiaimg" alt='img' src="/img/historia2.png"/></div>
             <div className="divHistoria">
-              <p className='paragrafoHistoria'>No inicio de 2024, numa roda de amigos conversávamos sobre os rumos  e desafios de nosso município.
+              <p className='paragrafoHistoria'>
+                No inicio de 2024, numa roda de amigos conversávamos sobre os rumos  e desafios de nosso município.
                 A preocupação nossa era sobre o futuro de nossas crianças e adolescentes, bem como o futuro econômico e as oportunidades que Catanduvas poderia estar perdendo.
                 Com isso passamos a reunir um grupo maior de pessoas que pensavam e compartilhavam das mesmas ideias. O que fazer para que nossa cidade fosse mais desenvolvida e apresentasse novas oportunidades sobre tudo aos mais jovens.
                 A visão empreendedora do grupo , fazia com que os debates ficassem mais fortes, e o entendimento dessas pessoas era de que esta transformação somente seria possível se passasse pela gestão publica.
@@ -184,33 +184,20 @@ function App() {
           <h2>Redes Sociais</h2>
           <div className="d-flex justify-content-center">
             <a href="https://www.facebook.com" className="text-primary mx-3" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-facebook fa-3x"></i>
+              <i className="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="https://www.twitter.com" className="text-primary mx-3" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter fa-3x"></i>
+            <a href="https://www.instagram.com" className="text-danger mx-3" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-instagram fa-2x"></i>
             </a>
-            <a href="https://www.instagram.com" className="text-primary mx-3" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-instagram fa-3x"></i>
-            </a>
-            <a href="https://www.linkedin.com" className="text-primary mx-3" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-linkedin fa-3x"></i>
+            <a href="https://www.twitter.com" className="text-info mx-3" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-twitter fa-2x"></i>
             </a>
           </div>
         </section>
       </main>
-
-      <footer className="custom-footer text-white text-center p-3">
-        <p>&copy; 2024 Campanha Política</p>
-        <div className="d-flex justify-content-center">
-          <a href="https://www.facebook.com" className="text-white mx-3" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-facebook fa-2x"></i>
-          </a>
-          <a href="https://www.twitter.com" className="text-white mx-3" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-twitter fa-2x"></i>
-          </a>
-          <a href="https://www.instagram.com" className="text-white mx-3" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-instagram fa-2x"></i>
-          </a>
+      <footer>
+        <div className="container text-center py-3">
+          <p>&copy; {new Date().getFullYear()} PODEMOS Catanduvas. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
