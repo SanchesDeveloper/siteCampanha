@@ -48,12 +48,11 @@ header {
 /* Estilo para o banner */
 .banner {
   width: 100%;
-  height: calc(100vh - 56px); /* Altura da tela menos a altura do navbar */
+  height: calc(100vh - 96px); /* Altura da tela menos a altura do navbar */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #0097FE;
-  padding: 20px;
 }
 
 @media (max-width: 780px) {
