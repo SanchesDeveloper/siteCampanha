@@ -27,7 +27,7 @@ function App() {
       showSlide(slideIndex);
     };
 
-    const slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    const slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
     showSlide(slideIndex);
 
     // Fade-in effect on scroll
@@ -108,8 +108,9 @@ function App() {
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ml-auto">
                 <Nav.Link href="#about">SOBRE</Nav.Link>
+                <Nav.Link href="#social">INSTITUCIONAL</Nav.Link>
                 <Nav.Link href="#form">FALE CONOSCO</Nav.Link>
-                <Nav.Link href="#social">REDES SOCIAIS</Nav.Link>
+                <Nav.Link href="https://filie.podemos.org.br/">FILIE-SE</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -121,7 +122,9 @@ function App() {
         <div id="banner" className="banner">
           <div className="slider">
             <div className="slides">
-              <div className="slide"><img src="/img/img1.jpg" alt="Imagem 1" className="img-fluid" /></div>
+              <div className="slide"><img src="/img/bactv.png" alt="Imagem 1" className="img-fluid" /></div>
+              <div className="slide"><img src="/img/boasvindas.png" alt="Imagem 1" className="img-fluid" /></div>
+              <div className="slide"><img src="/img/ba.png" alt="Imagem 1" className="img-fluid" /></div>
             </div>
           </div>
         </div>
@@ -142,6 +145,19 @@ function App() {
                 Juntos, construiremos um futuro promissor para Catanduvas! Com o PODEMOS, a mudança é agora! Catanduvas: um novo capítulo rumo ao progresso e à esperança!
               </p>
             </div>
+        </section>
+
+                {/* Seção de videos */}
+        <section id="social" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
+          <div>
+            <h1>VIDEO INSTITUCIONAL</h1>
+          </div>
+          <div className="mt-4">
+          <iframe width="1280" height="720" src="https://www.youtube.com/embed/4v1-jOPRHEE" 
+          title="JUNTOS PODEMOS MUITO MAIS" frameborder="0" allow="accelerometer; autoplay; 
+          clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </section>
 
         {/* Seção FAQ */}
@@ -179,11 +195,11 @@ function App() {
                 <input className="button" type="submit" value="Enviar" />
               </form>
         </section>
-        {/* Seção Redes Sociais */}
-        <section id="social" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
-          <h2>Redes Sociais</h2>
-          <div className="d-flex justify-content-center">
-            <a href="https://www.facebook.com" className="text-primary mx-3" target="_blank" rel="noopener noreferrer">
+      </main>
+      <footer>
+        <div className="container text-center py-3">
+          <p>&copy; {new Date().getFullYear()} PODEMOS Catanduvas. Todos os direitos reservados.</p>
+          <a href="https://www.facebook.com" className="text-primary mx-3" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
             <a href="https://www.instagram.com" className="text-danger mx-3" target="_blank" rel="noopener noreferrer">
@@ -192,12 +208,6 @@ function App() {
             <a href="https://www.twitter.com" className="text-info mx-3" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-twitter fa-2x"></i>
             </a>
-          </div>
-        </section>
-      </main>
-      <footer>
-        <div className="container text-center py-3">
-          <p>&copy; {new Date().getFullYear()} PODEMOS Catanduvas. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
