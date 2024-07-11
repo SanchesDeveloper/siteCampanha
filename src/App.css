@@ -106,7 +106,7 @@ header {
   display: flex;
   font-size: 40px;
   font-weight: bold;
-  color: #0b498b;
+  color: #000000;
   margin: 10px 0;
   position: relative;
   cursor: pointer;
@@ -118,7 +118,7 @@ header {
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
   white-space: nowrap;
-  color: #0b498b;
+  color: #000000;
   font-weight: normal;
   margin-left: 10px;
   opacity: 0;
@@ -226,7 +226,10 @@ header {
 }
 
 #tituloAcrostico {
-  background-color: #c1ffbb;
+  background-color: #ffffff;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+#acrostico {
+  background-image: url('fundo.jpg');
+}
