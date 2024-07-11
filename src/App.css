@@ -1,4 +1,3 @@
-/* Estilo base para o body */
 body {
   margin: 0;
   padding: 0;
@@ -11,11 +10,11 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+
 .logo {
   max-width: 15vh;
 }
 
-/* Estilo para a barra de navegação */
 .navbar {
   text-align: center;
   color: #f8f9fa;
@@ -39,7 +38,6 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Estilo para o cabeçalho (header) */
 header {
   background-color: #414141;
   position: fixed;
@@ -49,10 +47,9 @@ header {
   transition: background-color 0.5s ease-in-out;
 }
 
-/* Estilo para o banner */
 .banner {
   width: 100%;
-  height: calc(100vh - 96px); /* Altura da tela menos a altura do navbar */
+  height: calc(100vh - 96px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,11 +58,10 @@ header {
 
 @media (max-width: 780px) {
   .banner {
-    height: calc(100vh - 56px); /* Ajusta a altura do banner em telas menores */
+    height: calc(100vh - 56px);
   }
 }
 
-/* Estilo para o slider e suas imagens */
 .slider .slides .slide {
   display: none;
 }
@@ -77,13 +73,13 @@ header {
 
 .video-container {
   position: relative;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
+  padding-top: 56.25%;
   margin: 2rem auto;
   max-width: 800px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   overflow: hidden;
-  background: #f8f9fa; /* Light gray background */
+  background: #f8f9fa;
 }
 
 .video-container iframe {
@@ -99,26 +95,55 @@ header {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo responsivo para imagens dentro do slider em telas menores */
+.campaign {
+  font-family: cursive;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding-left: 300px;
+}
+.campaign span {
+  display: flex;
+  font-size: 40px;
+  font-weight: bold;
+  color: #0b498b;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+}
+.campaign span::after {
+  content: attr(data-content);
+  display: inline-block;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  white-space: nowrap;
+  color: #0b498b;
+  font-weight: normal;
+  margin-left: 10px;
+  opacity: 0;
+}
+.campaign span:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
 @media screen and (max-width: 780px) {
   .slider .slides .slide img {
     max-height: 500px;
     width: 100%;
   }
 
-  /* Ajustes para o body em telas menores */
   body {
-    color: #252525; /* Cor de texto alterada */
+    color: #252525;
   }
 
-  /* Ajustes para o cabeçalho (header) em telas menores */
   header {
-    background-color: #ffffff; /* Cor de fundo do cabeçalho alterada */
-    z-index: 1000; /* Z-index duplicado removido */
+    background-color: #ffffff;
+    z-index: 1000;
   }
 }
 
-/* Animação de slide para baixo */
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
@@ -128,13 +153,11 @@ header {
   }
 }
 
-/* Estilo para a seção de carousel com transição de opacidade */
 .carousel-section {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-/* Estilo para o rodapé */
 .footer {
   position: absolute;
   bottom: 0;
@@ -145,12 +168,10 @@ header {
   padding: 10px 0;
 }
 
-/* Classe de visibilidade para o rodapé */
 .footer.visible {
   display: block;
 }
 
-/* Estilo para o formulário */
 .form {
   max-width: 600px;
   margin: auto;
@@ -164,20 +185,18 @@ header {
   box-sizing: border-box;
 }
 
-/* Estilo para botões */
 .button {
   background-color: #007bff;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 10px; /* Adicionado border-radius para botões */
+  border-radius: 10px;
 }
 
 .button:hover {
   background-color: #0056b3;
 }
 
-/* Estilos específicos para a seção de história (exemplo) */
 #historiaimg {
   text-align: center;
 }
@@ -189,14 +208,14 @@ header {
 }
 
 .paragrafoHistoria {
-  background-color: #f8f9fa; /* Cor de fundo suave */
-  border-left: 5px solid #007bff; /* Barra colorida na esquerda */
+  background-color: #f8f9fa;
+  border-left: 5px solid #007bff;
   padding: 20px;
   font-size: 1.2rem;
   line-height: 1.6;
   font-family: 'Arial', sans-serif;
   color: #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mt-4 {
@@ -205,3 +224,9 @@ header {
   align-items: center;
   height: 100vh;
 }
+
+#tituloAcrostico {
+  background-color: #c1ffbb;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+

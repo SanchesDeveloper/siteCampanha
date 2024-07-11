@@ -27,10 +27,9 @@ function App() {
       showSlide(slideIndex);
     };
 
-    const slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    const slideInterval = setInterval(nextSlide, 5000);
     showSlide(slideIndex);
 
-    // Fade-in effect on scroll
     const sections = document.querySelectorAll('.carousel-section');
     const options = {
       threshold: 0.1
@@ -48,14 +47,13 @@ function App() {
       observer.observe(section);
     });
 
-    // Show footer at the bottom
     const footer = document.querySelector('footer');
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      if (scrollTop + windowHeight >= documentHeight - 1) { // Ajuste fino para detectar o final da página
+      if (scrollTop + windowHeight >= documentHeight - 1) {
         footer.classList.add('visible');
       } else {
         footer.classList.remove('visible');
@@ -116,9 +114,7 @@ function App() {
           </Container>
         </Navbar>
       </header>
-
       <main className="pt-5">
-        {/* Seção de Slides */}
         <div id="banner" className="banner">
           <div className="slider">
             <div className="slides">
@@ -128,9 +124,7 @@ function App() {
             </div>
           </div>
         </div>
-
-        {/* Seção Sobre o Projeto */}
-        <section id="about" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
+        <section id="about" className="carousel-section container text-center my-5 p-5 rounded shadow">
           <div id="historiaimg"><img className="historiaimg" alt='img' src="/img/historia2.png"/></div>
             <div className="divHistoria">
               <p className='paragrafoHistoria'>
@@ -146,9 +140,7 @@ function App() {
               </p>
             </div>
         </section>
-
-                {/* Seção de videos */}
-        <section id="social" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
+        <section id="social" className="carousel-section container text-center my-5 p-5 rounded shadow">
           <div>
             <h1>VIDEO INSTITUCIONAL</h1>
           </div>
@@ -159,9 +151,20 @@ function App() {
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </section>
+        <section id="acrostico" className="carousel-section container text-center my-5 p-5 rounded shadow">
+          <h1 id="tituloAcrostico" class="display-3 text-center text-dark p-3 rounded shadow">INTERAJA COM O PODEMOS PARA SABER NOSSOS VALORES.</h1>
+          <div class="campaign">
+            <span class="P" data-content="rogresso">P</span>
+            <span class="O" data-content="portunidade">O</span>
+            <span class="D" data-content="esenvolvimento">D</span>
+            <span class="E" data-content="quidade">E</span>
+            <span class="M" data-content="odernidade">M</span>
+            <span class="O" data-content="rganização">O</span>
+            <span class="S" data-content="ustentabilidade">S</span>
+          </div>
+        </section>
 
-        {/* Seção FAQ */}
-          <section id="form" className="carousel-section container text-center my-5 p-5 bg-light rounded shadow">
+          <section id="form" className="carousel-section container text-center my-5 p-5 rounded shadow">
             <h2>Como podemos te ajudar?</h2>
               <form className="form" onSubmit={sendEmail}>
                 <input
@@ -190,7 +193,7 @@ function App() {
                   placeholder="Fale conosco"
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
-                  rows="5" // Definindo o número de linhas do campo de mensagem
+                  rows="5"
                 />
                 <input className="button" type="submit" value="Enviar" />
               </form>
