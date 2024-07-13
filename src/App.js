@@ -202,10 +202,10 @@ function App() {
       <footer>
         <div className="container text-center py-3">
           <p>&copy; {new Date().getFullYear()} PODEMOS Catanduvas. Todos os direitos reservados.</p>
-          <a href="https://www.facebook.com" className="text-primary mx-3" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/people/Podemos-Catanduvas/61562635679503/" className="text-primary mx-3" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="https://www.instagram.com" className="text-danger mx-3" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/podemoscatanduvas/" className="text-danger mx-3" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram fa-2x"></i>
             </a>
             <a href="https://www.twitter.com" className="text-info mx-3" target="_blank" rel="noopener noreferrer">
