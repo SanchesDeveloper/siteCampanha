@@ -124,7 +124,7 @@ function App() {
             </div>
           </div>
         </div>
-        <section id="about" className="carousel-section container text-center my-5 p-5 rounded shadow">
+        <section id="about" className="carousel-section text-center rounded shadow">
           <div id="historiaimg"><img className="historiaimg" alt='img' src="/img/historia2.png"/></div>
             <div className="divHistoria">
               <p className='paragrafoHistoria'>
@@ -140,7 +140,7 @@ function App() {
               </p>
             </div>
         </section>
-        <section id="social" className="carousel-section container text-center my-5 p-5 rounded shadow">
+        <section id="social" className="carousel-section text-center my-5 p-5 rounded shadow">
           <div>
             <h1>VIDEO INSTITUCIONAL</h1>
           </div>
@@ -151,7 +151,7 @@ function App() {
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </section>
-        <section id="acrostico" className="carousel-section container text-center my-5 p-5 rounded shadow">
+        <section id="acrostico" className="carousel-section text-center my-5 p-5 rounded shadow">
           <h1 id="tituloAcrostico" class="display-3 text-center text-dark p-3 rounded shadow">INTERAJA COM O PODEMOS PARA SABER NOSSOS VALORES.</h1>
           <div class="campaign">
             <span class="P" data-content="rogresso">P</span>
@@ -164,7 +164,7 @@ function App() {
           </div>
         </section>
 
-          <section id="form" className="carousel-section container text-center my-5 p-5 rounded shadow">
+          <section id="form" className="carousel-section text-center my-5 p-5 rounded shadow">
             <h2>Como podemos te ajudar?</h2>
               <form className="form" onSubmit={sendEmail}>
                 <input
