@@ -12,6 +12,7 @@ body {
   font-family: 'Chivo', sans-serif;;
 }
 
+
 #about {
   padding-top: 130px;
 }
@@ -54,11 +55,6 @@ header {
 
 .banner {
   width: 100%;
-  height: calc(100vh - 96px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #0097FE;
 }
 
 #acrostico {
@@ -66,8 +62,11 @@ header {
 }
 
 @media (max-width: 780px) {
-  .banner {
-    height: calc(100vh - 56px);
+
+  .full-screen-img {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
   }
 
   #acrostico {

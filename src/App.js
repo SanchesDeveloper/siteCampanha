@@ -125,9 +125,17 @@ function App() {
         <div id="banner" className="banner">
           <div className="slider">
             <div className="slides">
-              <div className="slide"><img src="/img/bactv.png" alt="Imagem 1" className="img-fluid" /></div>
-              <div className="slide"><img src="/img/boasvindas.png" alt="Imagem 1" className="img-fluid" /></div>
-              <div className="slide"><img src="/img/ba.png" alt="Imagem 1" className="img-fluid" /></div>
+              {isMobile ? (
+                <>
+                  <div><img src="/img/mobile2.png" alt="Imagem Mobile 2" className="img-fluid full-screen-img"/></div>
+                </>
+              ) : (
+                <>
+                  <div className="slide"><img src="/img/bactv.png" alt="Imagem 1" className="img-fluid" /></div>
+                  <div className="slide"><img src="/img/boasvindas.png" alt="Imagem 2" className="img-fluid" /></div>
+                  <div className="slide"><img src="/img/ba.png" alt="Imagem 3" className="img-fluid" /></div>
+                </>
+              )}
             </div>
           </div>
         </div>
